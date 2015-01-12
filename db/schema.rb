@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141230171041) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "splines", force: :cascade do |t|
     t.string  "name"
     t.boolean "reticulated", default: false

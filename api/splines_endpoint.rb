@@ -54,7 +54,17 @@ module Acme
         end
         get do
           splines = Acme::Models::Spline.all
-          present Kaminari.paginate_array(splines).page(params[:page]).per(params[:size]), with: Acme::Api::Presenters::SplinesPresenter
+
+          # I don't use paginate_array
+          # If this is used it works because `respond_to('merge') == false`
+          #splines = Kaminari.paginate_array(splines).page(params[:page]).per(params[:size])
+          splines = splines.page(params[:page])
+            .per(params[:size])
+
+          #puts splines.class.name # ActiveRecord::Relation
+          puts splines.respond_to?('merge') # true
+
+          present splines, with: Acme::Api::Presenters::SplinesPresenter
         end
       end
     end

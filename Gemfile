@@ -6,7 +6,8 @@ gem 'rack-cors', '~> 0.3.1'
 gem 'grape-swagger', '~> 0.9.0'
 gem 'activerecord', '~> 4.2.0', require: 'active_record'
 gem 'protected_attributes'
-gem 'pg', platforms: :mri
+#gem 'pg', platforms: :mri
+gem 'sqlite3'
 gem 'kaminari', '~> 0.16.1', require: 'kaminari/grape'
 gem 'nokogiri', '1.6.2.1'
 gem 'activerecord-jdbcpostgresql-adapter', platforms: :jruby

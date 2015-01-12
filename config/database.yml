@@ -1,14 +1,12 @@
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   pool: 10
 
 development:
   <<: *default
-  database: acme_development
+  database: db/acme_development
 
 test:
   <<: *default
-  database: acme_test
-
-
+  database: db/acme_development
